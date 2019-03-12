@@ -137,3 +137,10 @@ To github.com:jainr/git-helloworld.git
  * [new branch]      file1branch -> file1branch
 Branch 'file1branch' set up to track remote branch 'file1branch' from 'origin'.
 ```
+
+## How to keep Github email private
+Go to settings on GitHub, then click email, select the option here to keep email address private
+```
+Keep my email address private
+We’ll remove your public profile email and use jainr@users.noreply.github.com when performing web-based Git operations and sending email on your behalf. If you want command line Git operations to use your private email you must set your email in Git.
+```
