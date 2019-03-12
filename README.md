@@ -1,4 +1,4 @@
-Basic repo to play and experiment with git commands as I learn them.
+# Basic repo to play and experiment with git commands as I learn them.
 
 Git Submodules
 ```
@@ -93,3 +93,47 @@ To github.com:jainr/git-helloworld.git
 Richins-MBP:git-helloworld richinjain$ 
 ```
 
+## Create GitHub PR with only a specific commit
+Create a new branch based off the branch you want to merge to, cherry pick your change in this branch and commit this branch
+
+Made two commits to testbranch but only want the commit with file1 to be part of PR
+```
+Richins-MBP:git-helloworld richinjain$ git log
+commit 7064bb7935ed158b5ef42f8459eefde56a843e4b (HEAD -> testbranch, origin/testbranch)
+Author: Richin Jain <rijai@microsoft.com>
+Date:   Mon Mar 11 22:05:36 2019 -0400
+
+    Adding file2
+
+commit 55516c17c79e254727aa478738baddd71847d0a7
+Author: Richin Jain <rijai@microsoft.com>
+Date:   Mon Mar 11 22:05:02 2019 -0400
+
+    Adding file 1
+```
+
+```
+Richins-MBP:git-helloworld richinjain$ git checkout -b file1branch origin/master
+Branch 'file1branch' set up to track remote branch 'master' from 'origin'.
+Switched to a new branch 'file1branch'
+Richins-MBP:git-helloworld richinjain$ 
+Richins-MBP:git-helloworld richinjain$ git cherry-pick 55516c17c79e254727aa478738baddd71847d0a7
+[file1branch 88b02cf] Adding file 1
+ Date: Mon Mar 11 22:05:02 2019 -0400
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 file1.txt
+Richins-MBP:git-helloworld richinjain$ git push -u origin file1branch
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 388 bytes | 388.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'file1branch' on GitHub by visiting:
+remote:      https://github.com/jainr/git-helloworld/pull/new/file1branch
+remote: 
+To github.com:jainr/git-helloworld.git
+ * [new branch]      file1branch -> file1branch
+Branch 'file1branch' set up to track remote branch 'file1branch' from 'origin'.
+```
