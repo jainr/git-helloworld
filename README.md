@@ -144,3 +144,18 @@ Go to settings on GitHub, then click email, select the option here to keep email
 Keep my email address private
 We’ll remove your public profile email and use jainr@users.noreply.github.com when performing web-based Git operations and sending email on your behalf. If you want command line Git operations to use your private email you must set your email in Git.
 ```
+
+# Checkout a branch that's not visible on your local
+Do git pull origin to first pull all the remotes.
+```
+Richins-MBP:richinjain$ git pull origin
+remote: Enumerating objects: 79, done.
+remote: Counting objects: 100% (79/79), done.
+remote: Compressing objects: 100% (35/35), done.
+remote: Total 79 (delta 46), reused 75 (delta 42), pack-reused 0
+Unpacking objects: 100% (79/79), done.
+ * [new branch]      jiata-benchmark     -> origin/jiata-benchmark
+ * [new branch]      loomlike-products -> origin/loomlike-msproducts
+   490ff8e..994abad  service_deploy      -> origin/service_deploy
+ * [new branch]      workspace_setup     -> origin/workspace_setup
+ ```
