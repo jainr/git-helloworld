@@ -93,5 +93,3 @@ To github.com:jainr/git-helloworld.git
 Richins-MBP:git-helloworld richinjain$ 
 ```
 
-Accidental commit
-
